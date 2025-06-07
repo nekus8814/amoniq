@@ -1,0 +1,14 @@
+services:
+  amoniq:
+   build: .
+   volumes:
+     - ./logs:/logs
+
+  web:
+   image: nginx:alpine
+   ports:
+     - "8080:80"
+   volumes:
+     - ./html:/usr/share/nginx/html:ro
+   depends_on:
+     - amoniq

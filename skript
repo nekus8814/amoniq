@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+mkdir -p $(pwd)/logs
+
+ABC="$(pwd)/logs/output_$(date +'%Y-%m-%d_%H-%M').log"
+LOGF="$(pwd)/logs/syscheck_$(date +'%Y-%m-%d_%H-%M').log"
+
+count=0
+counta=0
+
+while [[ $count -lt $MAXCOUNT || $counta -lt $MAXCOUNT ]]; do
+ echo "Let's go $counta"
+ echo "User name: $(hostname)" >> $ABC
+ echo "Logged in $(date)" >> $ABC
+ echo "Running user $(whoami)" >> $LOGF
+ ((count++))
+ ((counta++))
+ sleep $DELAY
+done
