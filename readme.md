@@ -14,7 +14,7 @@ This script was built as part of bootcamp preparation.
 ├── docker-compose.yml
 ├── Dockerfile
 ├── html
-│   └── index.html
+    └── index.html
 ├── logs
 ├── readme.md
 └── skript
